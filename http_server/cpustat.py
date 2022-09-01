@@ -20,7 +20,7 @@ class GetCpuLoad(object):
         @parent class: GetCpuLoad
         @date: 04.12.2014
         @author: plagtag
-        @info: 
+        @info:
         @param:
         @return: CPU load in percentage
         '''
@@ -43,10 +43,9 @@ class GetCpuLoad(object):
             6irq: servicing interrupts
             7softirq: servicing softirqs
 
-        #the formulas from htop 
+        #the formulas from htop
              user    nice   system  idle      iowait irq   softirq  steal  guest  guest_nice
         cpu  74608   2520   24433   1117073   6176   4054  0        0      0      0
-
 
         Idle=idle+iowait
         NonIdle=user+nice+system+irq+softirq+steal
@@ -76,7 +75,6 @@ class GetCpuLoad(object):
     def getcpuload(self):
         '''
         CPU_Percentage=((Total-PrevTotal)-(Idle-PrevIdle))/(Total-PrevTotal)
-
         '''
         start = self.getcputime()
         # wait a second
