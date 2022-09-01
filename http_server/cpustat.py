@@ -26,14 +26,8 @@ class GetCpuLoad(object):
         '''
         self.percentage = percentage
         self.cpustat = '/proc/stat'
-        self.cpuinfo = '/proc/cpuinfo'
         self.sep = ' '
         self.sleeptime = sleeptime
-
-    def getcpuinfo(self):
-        cpu_info = {}
-        with open(self.cpuinfo, 'r') as info:
-            return [line.rstrip('\n').replace('\t', '') for line in info if line.startswith('model name')][0]
 
     def getcputime(self):
         '''
